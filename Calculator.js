@@ -23,6 +23,7 @@ let modButton = document.querySelector('.mod');
 let rightPerensButton = document.querySelector('.rightParentheses');
 let leftPerensButton = document.querySelector('.leftParentheses');
 let squareButton = document.querySelector('.sqrt');
+let powButton = document.querySelector('.pow');
 
 let decimalButton = document.querySelector('.dec');
 let equalButton = document.querySelector('.equals');
@@ -83,6 +84,11 @@ modButton.onclick = function(){
     displayedValue = displayedValue + "%";
     display.innerHTML = displayedValue;
 }
+powButton.onclick = function(){
+    calculation = calculation + "^";
+    displayedValue = displayedValue + "^";
+    display.innerHTML = displayedValue;
+}
 plusButton.onclick = function(){
     calculation = calculation + "+";
     displayedValue = displayedValue + "+";
@@ -139,6 +145,8 @@ equalButton.onclick = function (){
     display.innerHTML = (extractFromParentheses(stringToArray(calculation)));
     calculation = display.innerHTML;
     displayedValue = display.innerHTML;
+    console.log(displayedValue);
+    console.log(calculation);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns a true if value is a number
@@ -221,12 +229,11 @@ function computeExpr(arr){
         if(arr[i][0] !== "$"){stack.push(arr[i]);}
         if(arr[i][0] === "$"){
             // grab the whole number after "$"
-            let a = arr[i].slice(1,arr.length);
+            let a = arr[i].slice(1,arr[0].length);
             // make the number negative
-            let answer = (0 - Number(a));
+            let answer = Number(0 - Number(a));
             // place on stack
             stack.push(answer);
-            i += 1; // skip current index (as to not add the current operator to the stack)
         }
     }
     arr = stack.slice(0,stack.length);
@@ -287,6 +294,7 @@ function operation(stack, operator){
             // ADDITION
             if(operator === "+"){
                 let answer = Number(a) + Number(arr[i+1]);
+                console.log("hey", answer)
                 stack.push(answer);
             }
             // SUBTRACTION
