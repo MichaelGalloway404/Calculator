@@ -226,8 +226,8 @@ function computeExpr(arr){
         // if current index is not the operator we need add index value to stack
         if(arr[i][0] !== "$"){stack.push(arr[i]);}
         if(arr[i][0] === "$"){
-            // if it is a negative symbol by it self multiply what ever is to the right by -1
-            if(arr[i][0].length === 1){stack.push(-1);stack.push("*");}
+            // if it is a negative symbol by itself multiply what ever is to the right by -1
+            if(arr[i].length === 1){stack.push(-1);stack.push("*");}
             else {
                 // grab the whole number after "$"
                 let a = arr[i].slice(1,arr[i].length);
