@@ -145,8 +145,6 @@ equalButton.onclick = function (){
     display.innerHTML = (extractFromParentheses(stringToArray(calculation)));
     calculation = display.innerHTML;
     displayedValue = display.innerHTML;
-    console.log(displayedValue);
-    console.log(calculation);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns a true if value is a number
@@ -228,12 +226,16 @@ function computeExpr(arr){
         // if current index is not the operator we need add index value to stack
         if(arr[i][0] !== "$"){stack.push(arr[i]);}
         if(arr[i][0] === "$"){
-            // grab the whole number after "$"
-            let a = arr[i].slice(1,arr[0].length);
-            // make the number negative
-            let answer = Number(0 - Number(a));
-            // place on stack
-            stack.push(answer);
+            // if it is a negative symbol by it self multiply what ever is to the right by -1
+            if(arr[i][0].length === 1){stack.push(-1);stack.push("*");}
+            else {
+                // grab the whole number after "$"
+                let a = arr[i].slice(1,arr[i].length);
+                // make the number negative
+                let answer = 0 - Number(a);
+                // place on stack
+                stack.push(answer);
+            }
         }
     }
     arr = stack.slice(0,stack.length);
@@ -294,7 +296,6 @@ function operation(stack, operator){
             // ADDITION
             if(operator === "+"){
                 let answer = Number(a) + Number(arr[i+1]);
-                console.log("hey", answer)
                 stack.push(answer);
             }
             // SUBTRACTION
