@@ -55,6 +55,7 @@ button{
     border-left: black solid 5px;
     font-family: sans-serif;
     font-size: 1.5rem;
+    background-color: black;
 }
 .center{
     display: flex;
@@ -68,3 +69,22 @@ button{
 .equals{
     background-color: #00B9FF;
 }
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 600px) {
+    .main {
+        transform: scale(1.5, 3);
+        transform-origin: 0 0 0;
+    }
+}
+@media only screen
+and (min-device-width: 600px)
+and (max-device-width: 1000px)
+and (min-device-height: 200px)
+and (max-device-height: 600px) {
+    .main {
+        transform: scale(2, 1.01);
+        transform-origin: 0 0 0;
+    }
+}
+
