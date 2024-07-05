@@ -1,6 +1,7 @@
 let display = document.querySelector('p');
 let calculation = "";
 let displayedValue = "";
+let newEquation = false;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let oneButton = document.querySelector('.one');
 let twoButton = document.querySelector('.two');
@@ -30,106 +31,145 @@ let equalButton = document.querySelector('.equals');
 let clearButton = document.querySelector('.clear');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 oneButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "1";
     displayedValue = displayedValue + "1";
     display.innerHTML = displayedValue;
 }
 twoButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "2";
     displayedValue = displayedValue + "2";
     display.innerHTML = displayedValue;
 }
 threeButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "3";
     displayedValue = displayedValue + "3";
     display.innerHTML = displayedValue;
 }
 fourButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "4";
     displayedValue = displayedValue + "4";
     display.innerHTML = displayedValue;
 }
 fiveButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "5";
     displayedValue = displayedValue + "5";
     display.innerHTML = displayedValue;
 }
 sixButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "6";
     displayedValue = displayedValue + "6";
     display.innerHTML = displayedValue;
 }
 sevenButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "7";
     displayedValue = displayedValue + "7";
     display.innerHTML = displayedValue;
 }
 eightButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "8";
     displayedValue = displayedValue + "8";
     display.innerHTML = displayedValue;
 }
 nineButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "9";
     displayedValue = displayedValue + "9";
     display.innerHTML = displayedValue;
 }
 zeroButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "0";
     displayedValue = displayedValue + "0";
     display.innerHTML = displayedValue;
 }
 modButton.onclick = function(){
+    newEquation = false;
     calculation = calculation + "%";
     displayedValue = displayedValue + "%";
     display.innerHTML = displayedValue;
 }
 powButton.onclick = function(){
+    newEquation = false;
     calculation = calculation + "^";
     displayedValue = displayedValue + "^";
     display.innerHTML = displayedValue;
 }
 plusButton.onclick = function(){
+    newEquation = false;
     calculation = calculation + "+";
     displayedValue = displayedValue + "+";
     display.innerHTML = displayedValue;
 }
 decimalButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + ".";
     displayedValue = displayedValue + ".";
     display.innerHTML = displayedValue;
 }
 subButton.onclick = function(){
-    calculation = calculation + "-";
+    newEquation = false;
+    if(calculation.length <= 0){calculation = calculation + "$";}
+    else{calculation = calculation + "-";}
     displayedValue = displayedValue + "-";
     display.innerHTML = displayedValue;
 }
 negativeButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "$";
     displayedValue = displayedValue + "(-)";
     display.innerHTML = displayedValue;
 }
 divideButton.onclick = function(){
+    // if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "/";
     displayedValue = displayedValue + "&#247;";
     display.innerHTML = displayedValue;
 }
 multiplyButton.onclick = function(){
+    // if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "*";
     displayedValue = displayedValue + "x";
     display.innerHTML = displayedValue;
 }
 squareButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "&";
     displayedValue = displayedValue + "&#8730;";
     display.innerHTML = displayedValue;
 }
 leftPerensButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + ")";
     displayedValue = displayedValue + ")";
     display.innerHTML = displayedValue;
 }
 rightPerensButton.onclick = function(){
+    if(newEquation === true){clearEquation();}
+    newEquation = false;
     calculation = calculation + "(";
     displayedValue = displayedValue + "(";
     display.innerHTML = displayedValue;
@@ -138,13 +178,22 @@ clearButton.onclick = function(){
     display.innerHTML = "0";
     calculation = "";
     displayedValue = "";
+    newEquation = false;
 }
 equalButton.onclick = function (){
     calculation =  "(" + calculation;
     calculation = calculation + ")";
     display.innerHTML = (extractFromParentheses(stringToArray(calculation)));
     calculation = display.innerHTML;
+    if(calculation[0]==="-"){calculation = "$"+calculation.slice(1,calculation.length)}
     displayedValue = display.innerHTML;
+    newEquation = true;
+
+}
+function clearEquation(){
+    display.innerHTML = "0";
+    calculation = "";
+    displayedValue = "";
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns a true if value is a number
