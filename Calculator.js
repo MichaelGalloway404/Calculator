@@ -140,14 +140,12 @@ negativeButton.onclick = function(){
     display.innerHTML = displayedValue;
 }
 divideButton.onclick = function(){
-    // if(newEquation === true){clearEquation();}
     newEquation = false;
     calculation = calculation + "/";
     displayedValue = displayedValue + "&#247;";
     display.innerHTML = displayedValue;
 }
 multiplyButton.onclick = function(){
-    // if(newEquation === true){clearEquation();}
     newEquation = false;
     calculation = calculation + "*";
     displayedValue = displayedValue + "x";
@@ -187,6 +185,7 @@ equalButton.onclick = function (){
     calculation = display.innerHTML;
     if(calculation[0]==="-"){calculation = "$"+calculation.slice(1,calculation.length)}
     displayedValue = display.innerHTML;
+    if(isNaN(calculation)){clearEquation(); display.innerHTML = "ERROR";}
     newEquation = true;
 
 }
