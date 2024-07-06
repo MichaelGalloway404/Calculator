@@ -69,25 +69,14 @@ button{
 .equals{
     background-color: #00B9FF;
 }
-@media only screen
-and (min-device-width: 300px)
-and (max-device-width: 700px) {
+@media (min-device-width: 375px)
+{
     .main {
         transform: scale(1.05, 2);
         transform-origin: 0 0 0;
     }
     button{
         transform: scale(1.2, 1);
-        transform-origin: 0 0 0;
-    }
-}
-@media only screen
-and (min-device-width: 600px)
-and (max-device-width: 1000px)
-and (min-device-height: 200px)
-and (max-device-height: 600px) {
-    .main {
-        transform: scale(2, 1.01);
         transform-origin: 0 0 0;
     }
 }
