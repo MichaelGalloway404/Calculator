@@ -3,197 +3,128 @@ let calculation = "";
 let displayedValue = "";
 let newEquation = false;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-let oneButton = document.querySelector('.one');
-let twoButton = document.querySelector('.two');
-let threeButton = document.querySelector('.three');
-let fourButton = document.querySelector('.four');
-let fiveButton = document.querySelector('.five');
-let sixButton = document.querySelector('.six');
-let sevenButton = document.querySelector('.seven');
-let eightButton = document.querySelector('.eight');
-let nineButton = document.querySelector('.nine');
-let zeroButton = document.querySelector('.zero');
-
-let plusButton = document.querySelector('.plus');
-let subButton = document.querySelector('.sub');
-let negativeButton = document.querySelector('.negative');
-let divideButton = document.querySelector('.division');
-let multiplyButton = document.querySelector('.mult');
-let modButton = document.querySelector('.mod');
-
-let rightPerensButton = document.querySelector('.rightParentheses');
-let leftPerensButton = document.querySelector('.leftParentheses');
-let squareButton = document.querySelector('.sqrt');
-let powButton = document.querySelector('.pow');
-
-let decimalButton = document.querySelector('.dec');
-let equalButton = document.querySelector('.equals');
-let clearButton = document.querySelector('.clear');
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-oneButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
+document.addEventListener("click", function(e){
+    parseInput(e.target.className)
+});
+function calculateAndDisplay(value, altValue = value){
+    calculation = calculation + value;
+    displayValue(altValue);
     newEquation = false;
-    calculation = calculation + "1";
-    displayedValue = displayedValue + "1";
-    display.innerHTML = displayedValue;
-}
-twoButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "2";
-    displayedValue = displayedValue + "2";
-    display.innerHTML = displayedValue;
-}
-threeButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "3";
-    displayedValue = displayedValue + "3";
-    display.innerHTML = displayedValue;
-}
-fourButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "4";
-    displayedValue = displayedValue + "4";
-    display.innerHTML = displayedValue;
-}
-fiveButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "5";
-    displayedValue = displayedValue + "5";
-    display.innerHTML = displayedValue;
-}
-sixButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "6";
-    displayedValue = displayedValue + "6";
-    display.innerHTML = displayedValue;
-}
-sevenButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "7";
-    displayedValue = displayedValue + "7";
-    display.innerHTML = displayedValue;
-}
-eightButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "8";
-    displayedValue = displayedValue + "8";
-    display.innerHTML = displayedValue;
-}
-nineButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "9";
-    displayedValue = displayedValue + "9";
-    display.innerHTML = displayedValue;
-}
-zeroButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "0";
-    displayedValue = displayedValue + "0";
-    display.innerHTML = displayedValue;
-}
-modButton.onclick = function(){
-    newEquation = false;
-    calculation = calculation + "%";
-    displayedValue = displayedValue + "%";
-    display.innerHTML = displayedValue;
-}
-powButton.onclick = function(){
-    newEquation = false;
-    calculation = calculation + "^";
-    displayedValue = displayedValue + "^";
-    display.innerHTML = displayedValue;
-}
-plusButton.onclick = function(){
-    newEquation = false;
-    calculation = calculation + "+";
-    displayedValue = displayedValue + "+";
-    display.innerHTML = displayedValue;
-}
-decimalButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + ".";
-    displayedValue = displayedValue + ".";
-    display.innerHTML = displayedValue;
-}
-subButton.onclick = function(){
-    newEquation = false;
-    if(calculation.length <= 0){calculation = calculation + "$";}
-    else{calculation = calculation + "-";}
-    displayedValue = displayedValue + "-";
-    display.innerHTML = displayedValue;
-}
-negativeButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "$";
-    displayedValue = displayedValue + "(-)";
-    display.innerHTML = displayedValue;
-}
-divideButton.onclick = function(){
-    newEquation = false;
-    calculation = calculation + "/";
-    displayedValue = displayedValue + "&#247;";
-    display.innerHTML = displayedValue;
-}
-multiplyButton.onclick = function(){
-    newEquation = false;
-    calculation = calculation + "*";
-    displayedValue = displayedValue + "x";
-    display.innerHTML = displayedValue;
-}
-squareButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "&";
-    displayedValue = displayedValue + "&#8730;";
-    display.innerHTML = displayedValue;
-}
-leftPerensButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + ")";
-    displayedValue = displayedValue + ")";
-    display.innerHTML = displayedValue;
-}
-rightPerensButton.onclick = function(){
-    if(newEquation === true){clearEquation();}
-    newEquation = false;
-    calculation = calculation + "(";
-    displayedValue = displayedValue + "(";
-    display.innerHTML = displayedValue;
-}
-clearButton.onclick = function(){
-    display.innerHTML = "0";
-    calculation = "";
-    displayedValue = "";
-    newEquation = false;
-}
-equalButton.onclick = function (){
-    calculation =  "(" + calculation;
-    calculation = calculation + ")";
-    display.innerHTML = (extractFromParentheses(stringToArray(calculation)));
-    calculation = display.innerHTML;
-    if(calculation[0]==="-"){calculation = "$"+calculation.slice(1,calculation.length)}
-    displayedValue = display.innerHTML;
-    if(isNaN(calculation)){clearEquation(); display.innerHTML = "ERROR";}
-    newEquation = true;
-
 }
 function clearEquation(){
     display.innerHTML = "0";
     calculation = "";
     displayedValue = "";
+    newEquation = false
 }
+function displayValue(value){
+    displayedValue = displayedValue + value;
+    display.innerHTML = displayedValue;
+}
+function parseInput(button){
+    switch (button){
+        case "one":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("1");
+            break
+        case "two":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("2");
+            break;
+        case "three":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("3");
+            break;
+        case "four":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("4");
+            break;
+        case "five":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("5");
+            break;
+        case "six":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("6");
+            break;
+        case "seven":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("7");
+            break;
+        case "eight":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("8");
+            break;
+        case "nine":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("9");
+            break;
+        case "zero":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("0");
+            break;
+        case "dec":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay(".");
+            break;
+        case "mod":
+            calculateAndDisplay("%");
+            break;
+        case "mult":
+            calculateAndDisplay("*","&#215;"); // &times
+            break;
+        case "division":
+            calculateAndDisplay("/","&#247;"); // &divide
+            break;
+        case "plus":
+            calculateAndDisplay("+");
+            break;
+        case "pow":
+            calculateAndDisplay("^");
+            break;
+        case "sub":
+            if(calculation.length <= 0){ calculateAndDisplay("$","(-)"); }
+            else{
+                if(calculation.indexOf("(") === calculation.length-1){
+                    calculateAndDisplay("$","(-)");
+                }
+                else{ calculateAndDisplay("-"); }
+            }
+            break;
+        case "negative":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("$","(-)");
+            break;
+        case "sqrt":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("&","&#8730;");
+            break;
+        case "leftParentheses":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay(")");
+            break;
+        case "rightParentheses":
+            if(newEquation === true){clearEquation();}
+            calculateAndDisplay("(");
+            break;
+        case "equals":
+            calculation =  "(" + calculation;
+            calculation = calculation + ")";
+            display.innerHTML = (extractFromParentheses(stringToArray(calculation)));
+            calculation = display.innerHTML;
+            if(isNaN(calculation)){clearEquation(); display.innerHTML = "ERROR";}
+            if(calculation[0] === "-"){calculation = "$" + calculation.slice(1,calculation.length)}
+            displayedValue = display.innerHTML;
+            newEquation = true;
+            break;
+        case "clear":
+            clearEquation();
+            break;
+    }
+}
+
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns a true if value is a number
 function isNumber(value) {return !isNaN(Number(value));}
@@ -229,10 +160,14 @@ function extractFromParentheses(array) {
     // if array is not enclosed by parentheses add opening/closing parentheses
     if(array[0] !== "("){array.unshift("(");array.push(")");}
     loop1: for (let i = 0; i < array.length; i++) {
-        // if for example 8(3) --> should be 8*3
-        if(array[i] === "(" && i !== 0){if(isNumber(array[i-1])){stack.push("*");}}
+        // if for example 8(3) --> should be 8*3, also check if right hand number is negative and if so slice out the "$" sign
+        if(array[i] === "(" && i !== 0){
+            if(isNumber(array[i-1]) || array[i-1].slice(1,array[i-1].length)){
+                stack.push("*");
+            }
+        }
         // if for example (3)8 --> should be 3*8
-        if(array[i] === ")" && i !== array.length-1){if(isNumber(array[i+1])){stack.push("*");}}
+        if(i !== 0){if(array[i-1] === ")" && (isNumber(array[i]) || array[i][0] === "$")){stack.push("*");}}
         // if for example 8 squareRoot(3) --> should be 8 * squareRoot(3) (as represented by &)
         if(array[i] === "&" && i !== 0){if(isNumber(array[i-1])){stack.push("*");}}
         // build  stack until closing parentheses is hit
