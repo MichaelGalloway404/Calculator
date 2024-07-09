@@ -15,6 +15,7 @@ for(let i= 0;i<document.querySelectorAll(".calcButton").length;i++){
         parseInput(event.target.className.split(" ")[1]);
         // animate the button currently being pressed
         buttonAnimation(event.target);
+        new Audio("./buttonClick.wav").play();
     });
 }
 // animates a button by adding/removing a class of pressed
