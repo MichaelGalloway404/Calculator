@@ -13,13 +13,13 @@ for(let i= 0;i<document.querySelectorAll(".calcButton").length;i++){
     document.querySelectorAll(".calcButton")[i].addEventListener("click", function (event){
         // send second class name ex. one, plus, ect... to our input handler
         parseInput(event.target.className.split(" ")[1]);
-        new Audio("./buttonClick.wav").play();
         // animate the button currently being pressed
         buttonAnimation(event.target);
     });
 }
 // animates a button by adding/removing a class of pressed
 function buttonAnimation(button){
+    new Audio("./buttonClick.wav").play();
     button.classList.add("pressed");
     setTimeout(function (){button.classList.remove("pressed");},100)
 }
