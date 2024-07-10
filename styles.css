@@ -70,13 +70,14 @@ button{
 }
 .main{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+/*     flex-direction: column; */
     padding-top: 20px;
     background: linear-gradient(40deg, #464a4c, #b3adae);
     border-left: #464a4c solid 15px;
     border-bottom: #464a4c solid 15px;
     background-size: 100% 100%;
     border-radius: 40px;
-/*     max-width: 650px; */
-    min-width: 300px;
+    max-width: 650px;
+    min-width: 328px;
 }
