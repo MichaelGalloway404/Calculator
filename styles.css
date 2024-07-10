@@ -10,8 +10,6 @@
     grid-template-columns: repeat(2,auto);
     gap: 8%;
     margin: 5%;
-    max-width: 600px;
-    min-width: 300px;
 }
 .screen{
     background: linear-gradient(300deg, #427a2a, #6ab04c);
@@ -70,9 +68,6 @@ button{
     box-shadow: 0 1px 1px 0 #000000;
     opacity: 0.5;
 }
-body{
-    min-width: 328px;
-}
 .main{
     display: flex;
     flex-direction: column;
@@ -82,6 +77,6 @@ body{
     border-bottom: #464a4c solid 15px;
     background-size: 100% 100%;
     border-radius: 40px;
-    max-width: 650px;
-    min-width: 327px;
+/*     max-width: 650px; */
+    min-width: 600px;
 }
