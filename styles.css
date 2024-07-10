@@ -104,13 +104,4 @@ button {
         font-size: 2rem;
     }
 
-    button {
-        font-size: 100%;
-    }
-
-    .main {
-        padding-top: 10px;
-        border-left: #464a4c solid 10px;
-        border-bottom: #464a4c solid 10px;
-    }
 }
