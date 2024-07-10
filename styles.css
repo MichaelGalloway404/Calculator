@@ -93,7 +93,8 @@ button {
 /* Media Queries for Mobile Devices */
 @media (max-width: 600px) {
     .panel {
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(3, auto);
+        max-height: 300px;
     }
 
     .buttonContainer {
