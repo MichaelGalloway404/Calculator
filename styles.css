@@ -93,11 +93,11 @@ button {
 /* Media Queries for Mobile Devices */
 @media (max-width: 600px) {
     .panel {
-        grid-template-columns: repeat(2, minmax(100px, auto));
+        grid-template-columns: repeat(2, auto);
     }
 
     .buttonContainer {
-        grid-template-columns: repeat(1, minmax(50px, auto));
+        grid-template-columns: repeat(1, auto);
     }
 
     p {
