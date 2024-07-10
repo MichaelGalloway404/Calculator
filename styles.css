@@ -10,6 +10,9 @@
     grid-template-columns: repeat(2,auto);
     gap: 8%;
     margin: 5%;
+    max-width: 600px;
+    min-width: 300px;
+}
 }
 .screen{
     background: linear-gradient(300deg, #427a2a, #6ab04c);
