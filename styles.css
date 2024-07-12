@@ -13,7 +13,7 @@
     grid-template-columns: repeat(2,auto);
     max-width: 650px;
     max-height: 700px;
-    min-width: 327px;
+/*     min-width: 327px; */
     min-height: 380px;
     gap: 8%;
     margin: 5%;
