@@ -6,7 +6,7 @@ let calculation = "";
 let displayedValue = "";
 // a bool for if the user wishes to use the output as part of a new equation
 let newEquation = false;
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // loop through each button of class ".calcButton"
 for(let i= 0;i<document.querySelectorAll(".calcButton").length;i++){
     // get each individual button
@@ -19,6 +19,7 @@ for(let i= 0;i<document.querySelectorAll(".calcButton").length;i++){
 }
 // animates a button by adding/removing a class of pressed
 function buttonAnimation(button){
+    foo();
     new Audio("./buttonClick.wav").play();
     button.classList.add("pressed");
     setTimeout(function (){button.classList.remove("pressed");},100)
@@ -159,10 +160,10 @@ function parseInput(button){
             break;
     }
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns a true if value is a number
 function isNumber(value) {return !isNaN(Number(value));}
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // returns an array from a string splitting numbers and symbols while retaining
 // actual numbers ex. ["(","-55",")"] not ["(","-","5","5",")"]
 function stringToArray(string){
@@ -186,7 +187,7 @@ function stringToArray(string){
     }
     return array;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // extracts equations from Parentheses, sends them to computeExpr until final answer is computed and returned
 function extractFromParentheses(array) {
     let stack = [];
@@ -235,7 +236,7 @@ function extractFromParentheses(array) {
     }
     return stack;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function computeExpr(arr){
     let stack = [];
     // NEGATIVES
@@ -276,7 +277,7 @@ function computeExpr(arr){
     stack = operation(stack,"-");// SUBTRACTION
     return stack;
 }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // function to perform an operation consisting of 2 operands(A & B) of the form (operandLeft operator operandRight)
 // -> returns an array of only the specified operator calculations computed
 function operation(stack, operator){
@@ -325,4 +326,18 @@ function operation(stack, operator){
         }
     }
     return stack;
+}
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function foo(){
+    document.querySelector(".a").innerHTML = "main = " + window.getComputedStyle(document.querySelector(".main")).width;
+    document.querySelector(".b").innerHTML = "buttonContainer = "+window.getComputedStyle(document.querySelector(".buttonContainer")).width;
+    document.querySelector(".c").innerHTML = "panel = "+window.getComputedStyle(document.querySelector(".panel")).width;
+    document.querySelector(".d").innerHTML = "body = "+window.getComputedStyle(document.querySelector("body")).width;
+    document.querySelector(".e").innerHTML = "html = "+window.getComputedStyle(document.querySelector("html")).width;
+    console.log("main = ",window.getComputedStyle(document.querySelector(".main")).width);
+    console.log("buttonContainer = ",window.getComputedStyle(document.querySelector(".buttonContainer")).width);
+    console.log("panel = ",window.getComputedStyle(document.querySelector(".panel")).width);
+    console.log("body = ",window.getComputedStyle(document.querySelector("body")).width);
+    console.log("html = ",window.getComputedStyle(document.querySelector("html")).width);
+    return "0";
 }
