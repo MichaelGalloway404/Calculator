@@ -35,8 +35,8 @@ p{
 button{
     background: linear-gradient(40deg, #9a7d02, #ffcf00);
     background-size: 100% 100%;
-    width: auto;
-    height: auto;
+    width: 80%;
+    height: 80%;
     border-left: solid 5px;
     /*font-family: sans-serif;*/
     font-size: 1em;
