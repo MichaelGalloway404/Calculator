@@ -1,8 +1,10 @@
 .panel{
     display: grid;
     grid-template-columns: repeat(3,auto);
-    height: auto;
-    width: auto;
+    min-height: 10px;
+    min-width: 10px;
+    max-height: 200px;
+    max-width: 200px;
 }
 .buttonContainer{
     display: grid;
