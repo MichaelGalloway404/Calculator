@@ -334,10 +334,12 @@ function foo(){
     document.querySelector(".c").innerHTML = "panel = "+window.getComputedStyle(document.querySelector(".panel")).width;
     document.querySelector(".d").innerHTML = "body = "+window.getComputedStyle(document.querySelector("body")).width;
     document.querySelector(".e").innerHTML = "html = "+window.getComputedStyle(document.querySelector("html")).width;
+    document.querySelector(".f").innerHTML = "button = "+window.getComputedStyle(document.querySelector("button")).width;
     console.log("main = ",window.getComputedStyle(document.querySelector(".main")).width);
     console.log("buttonContainer = ",window.getComputedStyle(document.querySelector(".buttonContainer")).width);
     console.log("panel = ",window.getComputedStyle(document.querySelector(".panel")).width);
     console.log("body = ",window.getComputedStyle(document.querySelector("body")).width);
     console.log("html = ",window.getComputedStyle(document.querySelector("html")).width);
+    console.log("buttons = ",window.getComputedStyle(document.querySelector("button")).width);
     return "0";
 }
