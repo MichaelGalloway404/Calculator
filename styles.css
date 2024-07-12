@@ -11,10 +11,10 @@
 .buttonContainer{
     display: grid;
     grid-template-columns: repeat(2,auto);
-    min-height: 10px;
-    min-width: 10px;
-    max-height: 100%;
-    max-width: 100%;
+    max-width: 650px;
+    max-height: 700px;
+    min-width: 327px;
+    min-height: 380px;
     gap: 8%;
     margin: 5%;
 }
