@@ -10,8 +10,10 @@
     display: grid;
     grid-template-columns: repeat(2,auto);
     grid-template-rows: repeat(5,auto);
-    height: 80%;
-    width: 80%;
+    min-height: 10px;
+    min-width: 10px;
+    max-height: 250px;
+    max-width: 250px;
     gap: 8%;
     margin: 5%;
 }
