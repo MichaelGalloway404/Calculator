@@ -329,12 +329,12 @@ function operation(stack, operator){
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function foo(){
-    document.querySelector(".a").innerHTML = "main = " + window.getComputedStyle(document.querySelector(".main")).width;
-    document.querySelector(".b").innerHTML = "buttonContainer = "+window.getComputedStyle(document.querySelector(".buttonContainer")).width;
-    document.querySelector(".c").innerHTML = "panel = "+window.getComputedStyle(document.querySelector(".panel")).width;
-    document.querySelector(".d").innerHTML = "body = "+window.getComputedStyle(document.querySelector("body")).width;
-    document.querySelector(".e").innerHTML = "html = "+window.getComputedStyle(document.querySelector("html")).width;
-    document.querySelector(".f").innerHTML = "button = "+window.getComputedStyle(document.querySelector("button")).width;
+    document.querySelector(".a").innerHTML = "main = " + window.getComputedStyle(document.querySelector(".main")).width +" "+window.getComputedStyle(document.querySelector(".main")).height;
+    document.querySelector(".b").innerHTML = "buttonContainer = "+window.getComputedStyle(document.querySelector(".buttonContainer")).width +" "+window.getComputedStyle(document.querySelector(".buttonContainer")).height;
+    document.querySelector(".c").innerHTML = "panel = "+window.getComputedStyle(document.querySelector(".panel")).width +" "+window.getComputedStyle(document.querySelector(".panel")).height;
+    document.querySelector(".d").innerHTML = "body = "+window.getComputedStyle(document.querySelector("body")).width +" "+window.getComputedStyle(document.querySelector("body")).height;
+    document.querySelector(".e").innerHTML = "html = "+window.getComputedStyle(document.querySelector("html")).width +" "+window.getComputedStyle(document.querySelector("html")).height;
+    document.querySelector(".f").innerHTML = "button = "+window.getComputedStyle(document.querySelector("button")).width +" "+window.getComputedStyle(document.querySelector("button")).height;
     console.log("main = ",window.getComputedStyle(document.querySelector(".main")).width);
     console.log("buttonContainer = ",window.getComputedStyle(document.querySelector(".buttonContainer")).width);
     console.log("panel = ",window.getComputedStyle(document.querySelector(".panel")).width);
