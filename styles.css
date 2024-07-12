@@ -1,16 +1,16 @@
 .panel{
     display: grid;
     grid-template-columns: repeat(3,auto);
-    height: 80%;
-    width: 80%;
+    height: auto;
+    width: auto;
     gap: 2%;
 }
 .buttonContainer{
     display: grid;
     grid-template-columns: repeat(2,auto);
     grid-template-rows: repeat(5,auto);
-    height: 80%;
-    width: 80%;
+    height: auto;
+    width: auto;
     gap: 8%;
     margin: 5%;
 }
