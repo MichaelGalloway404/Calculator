@@ -19,7 +19,7 @@ for(let i= 0;i<document.querySelectorAll(".calcButton").length;i++){
 }
 // animates a button by adding/removing a class of pressed
 function buttonAnimation(button){
-    foo();
+    // foo();
     new Audio("./buttonClick.wav").play();
     button.classList.add("pressed");
     setTimeout(function (){button.classList.remove("pressed");},100)
