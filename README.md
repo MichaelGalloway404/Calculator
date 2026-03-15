@@ -1,8 +1,43 @@
-# Calculator
-Simple school calculator project:  
->>While studying at Eastern Oregon University we were tasked with creating a simple calculator using a stack with python.  
-This was very easy, but it had it's problems for instance being able to evaluate 3(9) or -(9)6 ect...  
-I also wanted a calculator that would have an interface and even some fun stuff like button noises rather than just command line output.  
-So I created a better calculator that could handle a better range of input using HTML, CSS, and JavaScript.  
+# Web Calculator
 
-Try it out: https://michaelgalloway404.github.io/Calculator/
+A browser-based **scientific-style calculator** built with **JavaScript, HTML, and CSS**. The project implements a custom expression parser and evaluation engine capable of handling complex mathematical input beyond basic calculator functionality.
+
+Try it:  
+https://michaelgalloway404.github.io/Calculator/
+
+## Overview
+
+This calculator was developed to improve on a basic **stack-based Python calculator assignment** by adding a graphical interface and a more flexible expression parser. The application supports advanced mathematical input including parentheses, negative numbers, square roots, exponents, and implicit multiplication (e.g., `3(9)`).
+
+The interface provides interactive buttons, sound feedback, and real-time expression display.
+
+## Key Features
+
+- **Custom expression parser** built in JavaScript
+- Supports **parentheses, exponents, square roots, modulus, and negative numbers**
+- Handles **implicit multiplication** (e.g., `3(9)` or `8√(3)`)
+- **Graphical calculator interface**
+- **Button animations and sound feedback**
+- **Error handling** for invalid expressions
+
+## Technical Highlights
+
+- Mathematical expressions converted from **strings to token arrays**
+- **Stack-based evaluation system** for computing expressions
+- Operator precedence handling for:
+  - Exponents
+  - Modulus
+  - Multiplication / Division
+  - Addition / Subtraction
+- Recursive evaluation of **nested parentheses**
+- Dynamic UI updates through **DOM manipulation**
+
+## Technologies Used
+
+- JavaScript
+- HTML
+- CSS
+
+## Author
+
+Michael Galloway  
